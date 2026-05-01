@@ -17,7 +17,7 @@ class MlxTrainingStudio < Formula
   desc "Installer for MLX Training Studio (Swift macOS GUI for mlx-lm-lora fine-tuning)"
   homepage "https://github.com/jsgermanaai/mlx-training-studio-installer"
   url "https://github.com/jsgermanaai/mlx-training-studio-installer/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "__FILL_ME_IN__" # TODO: replace after tagging v0.1.0 on GitHub
+  sha256 "4f60cffa33e59c16bbf4c90aff98052a83bda60d0f644aed7030e021659fdede"
   version "0.1.0"
   license "Apache-2.0"
 
