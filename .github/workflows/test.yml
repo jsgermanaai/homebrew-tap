@@ -1,0 +1,31 @@
+name: Brew test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  brew-test:
+    name: brew test mlx-training-studio
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap this repo locally
+        run: |
+          brew tap jsgermanaai/tap "$(pwd)"
+
+      - name: Install formula (HEAD — skips sha256 check)
+        run: |
+          brew install --HEAD jsgermanaai/tap/mlx-training-studio
+
+      - name: Run brew test
+        run: |
+          brew test jsgermanaai/tap/mlx-training-studio
